@@ -1,4 +1,4 @@
-This repo is a collection of MATLAB functions commonly used in biomechanics and gait analysis data analysis. 
+This repo is a collection of MATLAB functions commonly used in locomotion biomechanics data analysis. 
 
 # `Thexton.m`
 This function determines the threshold that best discriminates between signal and noise in a measured EMG signal. It is an implementation of the method desribed in 
