@@ -4,7 +4,7 @@ This repository is a collection of MATLAB functions commonly used in locomotion 
 - [Gait event detection in single-belt running](#gait-event-detection-in-single-belt-running)
 - [Ensemble averaging of gait data](#ensemble-averaging-of-gait-data)
 
-## [Thexton EMG thresholding](thexton)
+## [Thexton EMG thresholding](code/thexton)
 
 This function determines the threshold that best discriminates between signal and noise in a measured EMG signal. It is an implementation of the method desribed in 
 [Thexton, A.J., 1996.](https://www.sciencedirect.com/science/article/abs/pii/0165027096000040) _A randomisation method for discriminating between signal and noise in recordings of rhythmic electromyographic activity. Journal of neuroscience methods, 66(2), pp.93-98._
@@ -16,13 +16,13 @@ Full wave rectified surface EMG signal from the abductor hallucis muscle of a hu
 <img align="center" src="example-figures/threshold.png" width="600" />
 </p>
 
-## [Gait event detection in single-belt running](runningEvents)
+## [Gait event detection in single-belt running](code/runningEvents)
 Detecting foot strike events in running is non trivial when using a single force plate, such as in a single belt treadmill, because the force plate cannot distinguish between ipsi- and contralateral foot strikes. This function uses force data and kinematic data from one marker on the foot and returns heel strike and toe off events. 
 
 ### Example
 coming soon!
 
-## [Ensemble averaging of gait data](ensembleAverage)
+## [Ensemble averaging of gait data](code/ensembleAverage)
 This function splits up continuous locomotion data (Kinetics, Kinematics, EMG etc.) into chunks between user provided heel strike and toe off events, normalizes each step to 100 points, and calculates the mean data over all steps. Events can be specified in seconds from the start of the time series or as frame numbers.
 
 ### Example
