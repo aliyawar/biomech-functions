@@ -22,11 +22,13 @@ coming soon!
 This function splits up continuous locomotion data (Kinetics, Kinematics, EMG etc.) into chunks between user provided heel strike and toe off events, normalizes each step to 100 points, and calculates the mean data over all steps. Events can be specified in seconds from the start of the time series or as frame numbers.
 
 ### Example
-Figure 1 shows a subset of the vertical ground reaction force data from a participant running at 0.77 Fr for 30s, recorded at 2000Hz, and low pass filtered with a cutoff frequency of 25 Hz. Figure 2 shows the output of `ensembleAverage.m` results in data chopped up and normalized to stance percent. From here, the mean and variance can be calculated across all steps. Each color is an individual step.
+Figure 1 shows a subset of the vertical ground reaction force data from a human running at 0.77 Fr for 30s, recorded at 2000Hz, and low pass filtered with a cutoff frequency of 25 Hz. Event instances are marked with black vertical bars for **touch down** and red for **toe off**.
 
 <p align="center">
-<img align="center" src="example-figures/fz-sample.png" width="600" />
+<img align="center" src="example-figures/fz-sample.png" width="1200" />
 </p>
+
+Figure 2 shows the output of `ensembleAverage.m` results in data chopped up between event pairs and normalized to stance percent. From here, the mean and variance can be calculated across all steps. Each color is an individual step.
 
 <p align="center">
 <img align="center" src="example-figures/fz-ensembleAvg.png" width="600" />
