@@ -16,7 +16,12 @@ Full wave rectified surface EMG signal from the abductor hallucis muscle of a hu
 This function splits up continuous locomotion data (Kinetics, Kinematics, EMG etc.) into chunks between user provided heel strike and toe off events, normalizes each step to 100 points, and calculates the mean data over all steps. Events can be specified in seconds from the start of the time series or as frame numbers.
 
 ### Example
-coming soon!
+
+
+
+A subset of the vertical ground reaction force data from a participant running at 0.77 Fr for 30s, recorded at 2000Hz, and low pass filtered with a cutoff frequency of 25 Hz. |  Output of `ensembleAverage.m` results in data chopped up and normalized to stance percent. From here, the mean and variance can be calculated across all steps. Each color is an individual step.
+:-------------------------:|:-------------------------:
+![](example-figures/fz-sample.png)  |  ![](example-figures/fz-ensembleAvg.png)
 
 ## [`runningEvents.m`](runningEvents)
 Detecting foot strike events in running is non trivial when using a single force plate, such as in a single belt treadmill, because the force plate cannot distinguish between ipsi- and contralateral foot strikes. This function uses force data and kinematic data from one marker on the foot and returns heel strike and toe off events. 
