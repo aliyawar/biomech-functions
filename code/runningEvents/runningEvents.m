@@ -2,7 +2,7 @@ function [frame_on, frame_off, time_on, time_off] = runningEvents(force_z,foot_z
 
 
     
-    forceThreshold = Fz >= 30;
+    forceThreshold = force_z >= 30;
     forceThreshold = forceThreshold(1:force_sampleRate/camera_sampleRate:end);
 
     forceThreshold_shift = [forceThreshold(1);forceThreshold(1:end-1)];
