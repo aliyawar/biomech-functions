@@ -1,22 +1,20 @@
-function [frame_on, frame_off, time_on, time_off] = runningEvents(force_z,foot_z, force_sampleRate, camera_sampleRate)
+function [frame_on, frame_off, time_on, time_off] = runningEvents(force_z,foot_z, forceThreshold,force_sampleRate, camera_sampleRate)
 
+    footInContact = force_z >= forceThreshold;
+    footInContact = footInContact(1:force_sampleRate/camera_sampleRate:end);
 
-    
-    forceThreshold = force_z >= 30;
-    forceThreshold = forceThreshold(1:force_sampleRate/camera_sampleRate:end);
-
-    forceThreshold_shift = [forceThreshold(1);forceThreshold(1:end-1)];
-    delta = forceThreshold - forceThreshold_shift;
+    footInContact_shift = [footInContact(1);footInContact(1:end-1)];
+    delta = footInContact - footInContact_shift;
     
     
     force_start = find(delta == 1);
     force_end = find(delta == -1);
     
-    if forceThreshold(1) == 1
+    if footInContact(1) == 1
         force_end = force_end(2:end);
     end
     
-    if forceThreshold(end) == 1
+    if footInContact(end) == 1
         force_start = force_start(1:end-1);
     end
     
