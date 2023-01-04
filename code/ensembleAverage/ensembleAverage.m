@@ -4,9 +4,9 @@ function [ensembleMatrix, actualTime] = ensembleAverage(signal, sampleRate, foot
         footOff = footOff(2:end);
     end
     
-    if eventsAreTimes == true
-        footOn = floor(sampleRate*footOn);
-        footOff = floor(sampleRate*footOff);
+    if eventsAreTimes == 'True'
+        footOn = max(floor(sampleRate*footOn),1);
+        footOff = max(floor(sampleRate*footOff),1);
     end
     
     strides = [footOn footOff];
