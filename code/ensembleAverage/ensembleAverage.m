@@ -4,7 +4,7 @@ function [ensembleMatrix, actualTime] = ensembleAverage(signal, sampleRate, foot
         footOff = footOff(2:end);
     end
     
-    if eventsAreTimes == 'True'
+    if (eventsAreTimes)
         footOn = max(floor(sampleRate*footOn),1);
         footOff = max(floor(sampleRate*footOff),1);
     end
